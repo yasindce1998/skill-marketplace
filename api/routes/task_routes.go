@@ -11,6 +11,9 @@ func TaskRoutes(r *gin.Engine) {
 	{
 		tasks.POST("", controllers.CreateTask)
 		tasks.PUT("/progress", controllers.UpdateTaskProgress)
+		tasks.PUT("/{id}", controllers.UpdateTask)
+		tasks.POST("/{id}/accept", controllers.AcceptOffer)
+		tasks.POST("/{id}/complete", controllers.AcceptTaskCompletion)
 		// Add more task-related routes here
 	}
 }

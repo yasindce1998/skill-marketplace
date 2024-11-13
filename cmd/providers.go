@@ -1,6 +1,7 @@
-package admin
+package cmd
 
 import (
+	"fmt"
 	"github.com/yasindce1998/skill-marketplace/api/controllers"
 
 	"github.com/spf13/cobra"
@@ -8,9 +9,10 @@ import (
 
 var providersCmd = &cobra.Command{
 	Use:   "providers",
-	Short: "Manage providers",
+	Short: "Get the number of providers",
 	Run: func(cmd *cobra.Command, args []string) {
-		controllers.GetProviders(c)
+		providerCount := controllers.GetProviderCount()
+		fmt.Printf("Number of providers: %d\n", providerCount)
 	},
 }
 
